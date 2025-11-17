@@ -1,0 +1,74 @@
+﻿@page
+@model TicketingApp.Pages.Manage.Events.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EventItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EventItem.created_at" class="control-label"></label>
+                <input asp-for="EventItem.created_at" class="form-control" />
+                <span asp-validation-for="EventItem.created_at" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.tenant_id" class="control-label"></label>
+                <input asp-for="EventItem.tenant_id" class="form-control" />
+                <span asp-validation-for="EventItem.tenant_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.Event_Title" class="control-label"></label>
+                <input asp-for="EventItem.Event_Title" class="form-control" />
+                <span asp-validation-for="EventItem.Event_Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.Event_Date" class="control-label"></label>
+                <input asp-for="EventItem.Event_Date" class="form-control" />
+                <span asp-validation-for="EventItem.Event_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.venue" class="control-label"></label>
+                <input asp-for="EventItem.venue" class="form-control" />
+                <span asp-validation-for="EventItem.venue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.Event_Status" class="control-label"></label>
+                <input asp-for="EventItem.Event_Status" class="form-control" />
+                <span asp-validation-for="EventItem.Event_Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.NoofTickets" class="control-label"></label>
+                <input asp-for="EventItem.NoofTickets" class="form-control" />
+                <span asp-validation-for="EventItem.NoofTickets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.createdby" class="control-label"></label>
+                <input asp-for="EventItem.createdby" class="form-control" />
+                <span asp-validation-for="EventItem.createdby" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventItem.Venue_Location" class="control-label"></label>
+                <input asp-for="EventItem.Venue_Location" class="form-control" />
+                <span asp-validation-for="EventItem.Venue_Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

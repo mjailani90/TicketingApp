@@ -12,5 +12,8 @@ namespace TicketingApp.Data
 
         public DbSet<EventItem> Events { get; set; }
 
+        public DbSet<Ticket> Ticket { get; set; }
+
+
     }
 }

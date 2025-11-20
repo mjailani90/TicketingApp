@@ -23,7 +23,7 @@ namespace TicketingApp.Pages.Manage.Events
         [BindProperty]
         public EventItem EventItem { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(long? id)
         {
             if (id == null)
             {
@@ -69,7 +69,7 @@ namespace TicketingApp.Pages.Manage.Events
             return RedirectToPage("./Index");
         }
 
-        private bool EventItemExists(int id)
+        private bool EventItemExists(long id)
         {
             return _context.Events.Any(e => e.EventID == id);
         }

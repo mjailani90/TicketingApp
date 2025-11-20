@@ -1,0 +1,67 @@
+﻿@page
+@model TicketingApp.Pages.Manage.Events.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>تفاصيل الفعالية</h1>
+
+<div>
+    <hr />
+    <div class="row">
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.Event_Title)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.Event_Title)
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.Event_Date)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.Event_Date)
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.venue)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.venue)
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.Venue_Location)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.Venue_Location)
+        </div>
+
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.Event_Status)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.Event_Status)
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.NoofTickets)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.NoofTickets)
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.createdby)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.createdby)
+        </div>
+
+
+
+        <div class="col-md-3 mb-3">
+            <strong>@Html.DisplayNameFor(m => m.EventItem.created_at)</strong><br />
+            @Html.DisplayFor(m => m.EventItem.created_at)
+        </div>
+
+    </div>
+
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.EventItem.EventID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
+<hr />
+<h4>التذاكر المحجوزة</h4>
+
+

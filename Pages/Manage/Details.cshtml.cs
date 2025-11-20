@@ -20,8 +20,9 @@ namespace TicketingApp.Pages.Manage.Events
         }
 
         public EventItem EventItem { get; set; } = default!;
+        public Ticket Ticket { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(long? id)
         {
             if (id == null)
             {
@@ -29,6 +30,8 @@ namespace TicketingApp.Pages.Manage.Events
             }
 
             var eventitem = await _context.Events.FirstOrDefaultAsync(m => m.EventID == id);
+            var ticket = await _context.Ticket.FirstOrDefaultAsync(m => m.EventID == id);
+
             if (eventitem == null)
             {
                 return NotFound();
@@ -36,6 +39,7 @@ namespace TicketingApp.Pages.Manage.Events
             else
             {
                 EventItem = eventitem;
+                Ticket = ticket;
             }
             return Page();
         }

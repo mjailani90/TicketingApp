@@ -1,10 +1,85 @@
 ﻿@page
-@model IndexModel
+@model TicketingApp.Pages.Manage.Events.IndexModel
+
 @{
-    ViewData["Title"] = "Manage page";
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>الفعاليات</h1>
+
+<p>
+    <a asp-page="Create">فعالية جديدة</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            @* <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].tenant_id)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].Event_Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].Event_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].venue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].Venue_Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].Event_Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].NoofTickets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].TicketsBooked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventItem[0].created_at)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Events) {
+        <tr>
+
+            @* <td>
+                @Html.DisplayFor(modelItem => item.tenant_id)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Event.Event_Title)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Event.Event_Date)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Event.venue)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Event.Venue_Location)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Event.Event_Status)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Event.NoofTickets)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketsBooked)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.created_at)
+                </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Event.EventID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Event.EventID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Event.EventID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

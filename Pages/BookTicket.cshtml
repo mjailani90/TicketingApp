@@ -1,0 +1,99 @@
+﻿@page
+@model TicketingApp.Pages.BookTicketModel
+
+@{
+    ViewData["Title"] = "BookTicket";
+}
+
+<h1>BookTicket</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div>
+        <form method="post">
+            <div class="row g-3">
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.Ticket_id" class="form-label"></label>
+                    <input asp-for="Ticket.Ticket_id" class="form-control" />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.EventID" class="form-label"></label>
+                    <input asp-for="Ticket.EventID" class="form-control" />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <label asp-for="Ticket.FirstName" class="form-label"></label>
+                    <input asp-for="Ticket.FirstName" class="form-control" />
+                    <span asp-validation-for="Ticket.FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <label asp-for="Ticket.LastName" class="form-label"></label>
+                    <input asp-for="Ticket.LastName" class="form-control" />
+                    <span asp-validation-for="Ticket.LastName" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <label asp-for="Ticket.phoneNo" class="form-label"></label>
+                    <input asp-for="Ticket.phoneNo" class="form-control" />
+                    <span asp-validation-for="Ticket.phoneNo" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <label asp-for="Ticket.email" class="form-label"></label>
+                    <input asp-for="Ticket.email" class="form-control" />
+                    <span asp-validation-for="Ticket.email" class="text-danger"></span>
+
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.status" class="form-label"></label>
+                    <input asp-for="Ticket.status" class="form-control" />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.created_at" class="form-label"></label>
+                    <input asp-for="Ticket.created_at" class="form-control" type="date" />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.used_at" class="form-label"></label>
+                    <input asp-for="Ticket.used_at" class="form-control" type="date" />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.usedby" class="form-label"></label>
+                    <input asp-for="Ticket.usedby" class="form-control" />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 d-none">
+                    <label asp-for="Ticket.ticket_code" class="form-label"></label>
+                    <input asp-for="Ticket.ticket_code" class="form-control" />
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="g-recaptcha" data-sitekey="@Configuration["GoogleReCaptcha:SiteKey"]"></div>
+                </div>
+
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

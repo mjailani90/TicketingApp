@@ -47,22 +47,22 @@ namespace TicketingApp.Models
         [Display(Name = "معرف التذكرة")]
         public string Ticket_id { get; set; }// = Guid.NewGuid().ToString(); // Initialize with a new UUID
 
-        /// <summary>
-        /// Foreign Key linking the ticket to the parent event.
-        /// </summary>
-        [Required]
         [Display(Name = "معرف الفعالية")]
         public long EventID { get; set; }
 
+        [Required]
         [Display(Name = "الاسم الأول")]
         public string? FirstName { get; set; }
 
+        [Required]
         [Display(Name = "اسم العائلة")]
         public string? LastName { get; set; }
 
+        [Required]
         [Display(Name = "رقم الهاتف")]
         public string? phoneNo { get; set; }
 
+        [Required]
         [Display(Name = "البريد الإلكتروني")]
         public string? email { get; set; }
 
